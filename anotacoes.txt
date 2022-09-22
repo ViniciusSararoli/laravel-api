@@ -1,0 +1,19 @@
+Instalar Composer, Postman, Wamp server e mySQL Workbanch
+
+*********** Iniciar projeto Laravel PHP ***********
+composer create-project laravel/laravel laravel-api --prefer-dist
+
+Add "use Illuminate\Support\Facades\Schema;" no "app\Providers\AppServiceProvider.php" e Schema::defaultStringLength(191); no boot para corrigir erro com as migrations
+
+
+php artisan make:Controller ControllerIndex --resource
+
+********** Criar model e migration **********
+php artisan make:model ModelIndex -m
+
+********** Iniciar projeto laravel *************
+php artisan serve
+
+******* Migrar tabela para base de dados *******
+php artisan migrate
+
