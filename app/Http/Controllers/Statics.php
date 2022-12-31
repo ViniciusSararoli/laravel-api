@@ -108,4 +108,9 @@ class Statics extends Controller
             return 249.90;
         }
     }
+
+    public static function produtos_servicos() {
+        $vetor['1'] = ['jogo-playstation','jogo']; 
+        return $vetor;
+    }
 }

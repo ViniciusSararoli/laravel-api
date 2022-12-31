@@ -40,7 +40,7 @@ class ControllerCalcular extends Controller
                 )); 
                 break;
             default:
-                # code...
+                return Statics::produtos_servicos();
                 break;
         }       
     }

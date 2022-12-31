@@ -1,8 +1,11 @@
 <?php
+//$header = apache_request_headers();
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ControllerIndex;
+use App\Http\Controllers\ControllerCalcular;
+use App\Http\Controllers\ControllerCalcularCarrinho;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -18,8 +21,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
  */
+// var_dump($header);
+//$param = explode("/",trim($_SERVER['REQUEST_URI']));
+// var_dump($param); die;
+Route::get('/calcular/', [ControllerCalcular::class, "ControllerCalcular"]);
+Route::get('/calcular/{produto}/', [ControllerCalcular::class, "ControllerCalcular"]);
+Route::post('/carrinho/', [ControllerCalcularCarrinho::class, "CalcularCarrinho"]);
 
-Route::get('/cliente', [ControllerIndex::class, "index"]);
-Route::post('/cliente', [ControllerIndex::class, "store"]);
-Route::get('/cliente/:idcliente', [ControllerIndex::class, "show"]);
 
