@@ -81,7 +81,7 @@ class Statics extends Controller
     {
         //
     }
-    public static function calcularPrazo($idproduto, $tipoProdutoUrl, $formato = false) {
+    public static function calcularPrazo($tipoProdutoUrl, $formato=false) {
         $prazoFinal = 0;
         switch (strtolower($tipoProdutoUrl)) {
             case 'jogo-playstation':
@@ -94,9 +94,9 @@ class Statics extends Controller
         }
         if($tipoProduto == 1){
             if($formato){
-                $prazoFinal += 5;
-            }else{
                 $prazoFinal += 1;
+            }else{
+                $prazoFinal += 5;
             }
         }
         return $prazoFinal;

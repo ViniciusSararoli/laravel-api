@@ -35,7 +35,7 @@ function tirarAcentos($string){
 }
 
 function getListaPrecosPrazos($param){
-    
+    var_dump($param); die;
     if($param['formato'] == 'fisico'){
         $formato = 'correios';
         $tipoDeEnvio = 0;
@@ -71,20 +71,11 @@ function getListaPrecosPrazos($param){
         $compras[0]['valor']      = $valor;
         $compras[0]['quantidade'] = 1;
         $listaServicos['total'] = $total = $valor;
-        if($adicionais['pasta_protecao']>0){
-            $compras[1]['url']        = 'pasta_protecao';
-            $compras[1]['servico']    = 'Pasta de Proteção';
-            $compras[1]['valor']      = 5;
-            $compras[1]['quantidade'] = 1;
-            $total += $compras[1]['valor'];
-        }
+        
         $listaServicos['total'] = $total;
         $compras = json_decode(SaidaJson::imprimir($compras),true);
-    }
-    if($total>0 || cliente_premium()){
-        if(cliente_premium()){
-            $listaServicos = json_decode(SaidaJson::imprimir($listaServicos),true);
-        }
+    
+    if($total>0){
         $saida = ['resposta'=>'ok','servicos'=>$compras,'total'=>round($listaServicos['total'],2),'prazo'=>$prazoEntrega,'tipoEnvio'=>$tipoDeEnvio,'formato'=>$formato,'listaCartorio'=>$listaCartorios];
     }else{
         $saida = ['resposta'=>'erro','msg'=>'Erro em '.$param['url_tipo_certidao'].' - Valor zerado'];

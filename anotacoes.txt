@@ -21,7 +21,8 @@ php artisan migrate
 curl http://127.0.0.1:8000/api/calcular/   --request GET -A 'GuzzleHttp/6.5.5 curl/7.74.0 PHP/7.4.32' -H 'Accept: application/json' -H 'Content-Type: application/x-www-form-urlencoded'
 curl http://127.0.0.1:8000/api/calcular/jogo-playstation/   --request GET -A 'GuzzleHttp/6.5.5 curl/7.74.0 PHP/7.4.32' -H 'Accept: application/json' -H 'Content-Type: application/x-www-form-urlencoded'
 
-curl http://127.0.0.1:8000/api/carrinho/  --request POST -A 'GuzzleHttp/6.5.5 curl/7.74.0 PHP/7.4.32' -H 'Accept: application/json' -H 'Content-Type: application/x-www-form-urlencoded' -d 'carrinho=[{"url_produto":"jogo-playstation","formato":"fisico"]"}]'
+curl http://127.0.0.1:8000/api/carrinho/  --request POST -A 'GuzzleHttp/6.5.5 curl/7.74.0 PHP/7.4.32' -H 'Accept: application/json' -H 'Content-Type: application/x-www-form-urlencoded' -d 'carrinho=[{"url_produto":"jogo-playstation","formato":"fisico"}]'
+curl http://127.0.0.1:8000/api/carrinho/  --request POST -A 'GuzzleHttp/6.5.5 curl/7.74.0 PHP/7.4.32' -H 'Accept: application/json' -H 'Content-Type: application/x-www-form-urlencoded' -d 'carrinho=[{"url_produto":"jogo-playstation","formato":"fisico"},{"url_produto":"jogo-playstation","formato":"fisico"}]'
 
 curl http://127.0.0.1:8000/api/solicitar/  --request POST -A 'GuzzleHttp/6.5.5 curl/7.74.0 PHP/7.4.32' -H 'Accept: application/json' -H 'Content-Type: application/x-www-form-urlencoded' -d 'carrinho=[{"url_produto":"jogo-playstation","formato":"fisico"]"}]' -d 'endereco=Av Águia de Haia,3849,Apt 125A,Jd. Cotinha,SP,São Paulo,03889100' -d 'cliente=[{"nome":"Vinicius Sararoli","documento":"33935713894","nascimento":"1998-02-21"}]'
 
